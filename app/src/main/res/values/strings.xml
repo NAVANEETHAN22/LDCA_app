@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LDCA</string>
+    <string-array name="model_options">
+        <item>Auto Select</item>
+        <item>Naive Bayes</item>
+        <item>Logistic Regression</item>
+        <item>Decision Tree</item>
+        <item>Random Forest</item>
+    </string-array>
+</resources>

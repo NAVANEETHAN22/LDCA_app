@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingTop="48dp">
+
+        <!-- ── Computing indicator (shown while result engine runs) ───── -->
+        <ProgressBar
+            android:id="@+id/computingProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/computingText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Computing results…"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"/>
+
+        <!-- ── Metrics ───────────────────────────────────── -->
+        <TextView
+            android:id="@+id/accuracyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Accuracy"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/precisionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Precision"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/recallText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recall"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/f1Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="F1 Score"
+            android:textSize="18sp"/>
+
+        <!-- Shown only when Auto Select picked the model -->
+        <TextView
+            android:id="@+id/autoSelectReasonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="#FFF9C4"
+            android:padding="10dp"
+            android:textSize="13sp"
+            android:textStyle="italic"
+            android:textColor="#5D4037"
+            android:visibility="gone"/>
+
+        <!-- ── Confusion Matrix ──────────────────────────── -->
+        <LinearLayout
+            android:id="@+id/matrixContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+        <!-- ── Metric Bar Chart ──────────────────────────── -->
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/metricChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+
+        <!-- ── Class Distribution Pie Chart ─────────────── -->
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/classChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+
+        <!-- ── Cross-Validation Results ─────────────────── -->
+        <TextView
+            android:id="@+id/cvLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Cross-Validation (5-Fold)"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/cvMeanText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"/>
+
+        <LinearLayout
+            android:id="@+id/cvContainer"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical"/>
+
+        <!-- ── ROC Curve ─────────────────────────────────── -->
+        <TextView
+            android:id="@+id/rocLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="ROC Curve"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/rocContainer"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical"/>
+
+        <!-- ── Precision-Recall Curve ────────────────────── -->
+        <TextView
+            android:id="@+id/prLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Precision-Recall Curve"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/prContainer"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical"/>
+
+        <!-- ── Feature Importance ────────────────────────── -->
+        <TextView
+            android:id="@+id/fiLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Feature Importance"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/fiContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            android:orientation="vertical"/>
+
+        <!-- ── Prediction Table ──────────────────────────── -->
+        <LinearLayout
+            android:id="@+id/predictionContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+        <!-- ── Download Button ───────────────────────────── -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/downloadReport"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:text="Download PDF Report"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            style="@style/Widget.Material3.Button.TonalButton"/>
+
+    </LinearLayout>
+
+</ScrollView>
