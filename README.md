@@ -133,9 +133,14 @@ The LDCA system consists of multiple modules including input handling, preproces
 * Model accuracy depends on dataset diversity
 
 ---
-[LDCA.docx](https://github.com/user-attachments/files/26396119/LDCA.docx)
-[Lightweight Data Classifier for Android.pptx](https://github.com/user-attachments/files/26396273/Lightweight.Data.Classifier.for.Android.pptx)
+Project Documentation
 
+📘 Project Report (DOCX):
+👉 Download Report
+[LDCA.pdf](https://github.com/user-attachments/files/26396391/LDCA.pdf)
+📊 Project Presentation (PPTX):
+👉 Download PPT
+[Lightweight Data Classifier for Android.pptx](https://github.com/user-attachments/files/26396273/Lightweight.Data.Classifier.for.Android.pptx)
 
 
 
